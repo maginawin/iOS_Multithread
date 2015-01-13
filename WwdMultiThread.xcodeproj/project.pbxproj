@@ -14,6 +14,7 @@
 		081892031A63B17200CB6574 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 081892021A63B17200CB6574 /* Images.xcassets */; };
 		081892061A63B17200CB6574 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 081892041A63B17200CB6574 /* LaunchScreen.xib */; };
 		081892121A63B17200CB6574 /* WwdMultiThreadTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 081892111A63B17200CB6574 /* WwdMultiThreadTests.m */; };
+		081A5E9B1A6500CF001449B4 /* WwdNSOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 081A5E9A1A6500CF001449B4 /* WwdNSOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		0818920B1A63B17200CB6574 /* WwdMultiThreadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WwdMultiThreadTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		081892101A63B17200CB6574 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		081892111A63B17200CB6574 /* WwdMultiThreadTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WwdMultiThreadTests.m; sourceTree = "<group>"; };
+		081A5E991A6500CF001449B4 /* WwdNSOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WwdNSOperation.h; sourceTree = "<group>"; };
+		081A5E9A1A6500CF001449B4 /* WwdNSOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WwdNSOperation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,8 @@
 				081892021A63B17200CB6574 /* Images.xcassets */,
 				081892041A63B17200CB6574 /* LaunchScreen.xib */,
 				081891F51A63B17200CB6574 /* Supporting Files */,
+				081A5E991A6500CF001449B4 /* WwdNSOperation.h */,
+				081A5E9A1A6500CF001449B4 /* WwdNSOperation.m */,
 			);
 			path = WwdMultiThread;
 			sourceTree = "<group>";
@@ -222,6 +227,7 @@
 				081891FE1A63B17200CB6574 /* ViewController.m in Sources */,
 				081891FB1A63B17200CB6574 /* AppDelegate.m in Sources */,
 				081891F81A63B17200CB6574 /* main.m in Sources */,
+				081A5E9B1A6500CF001449B4 /* WwdNSOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +422,7 @@
 				081892171A63B17200CB6574 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		081892181A63B17200CB6574 /* Build configuration list for PBXNativeTarget "WwdMultiThreadTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +431,7 @@
 				0818921A1A63B17200CB6574 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -44,9 +44,6 @@
                                     <action selector="downloadImage:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="bkE-NU-eAA"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lat-vA-xaH">
-                                <rect key="frame" x="120" y="142" width="80" height="40"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hba-kn-XDy">
                                 <rect key="frame" x="51" y="190" width="218" height="30"/>
                                 <state key="normal" title="同步提交任务">
@@ -56,12 +53,68 @@
                                     <action selector="syncTask:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="2En-zX-fCK"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6mf-al-K0p">
+                                <rect key="frame" x="51" y="228" width="218" height="30"/>
+                                <state key="normal" title="多次提交的任务">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="applyTash:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="6mn-uu-WSN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNb-o2-lkg">
+                                <rect key="frame" x="51" y="266" width="218" height="30"/>
+                                <state key="normal" title="只执行一次的任务">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onceTask:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="wda-qw-HV0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fZr-vH-qWn">
+                                <rect key="frame" x="51" y="304" width="218" height="30"/>
+                                <state key="normal" title="NSBlockOperation">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="blockOperation:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="6Ne-Gm-yWP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w0E-GU-3ee">
+                                <rect key="frame" x="51" y="342" width="218" height="30"/>
+                                <state key="normal" title="NSInvocationOperation">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="invocationOperation:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="3gJ-qi-TtK"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MEK-a7-bC1">
+                                <rect key="frame" x="99" y="142" width="40" height="40"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zfq-Uj-Pa2">
+                                <rect key="frame" x="147" y="142" width="40" height="40"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w4M-l8-7YR">
+                                <rect key="frame" x="51" y="380" width="218" height="30"/>
+                                <state key="normal" title="WwdNSOperation">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="wwdOperation:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ce1-PR-MUY"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lat-vA-xaH">
+                                <rect key="frame" x="51" y="142" width="40" height="40"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="imageVIew2" destination="MEK-a7-bC1" id="IhU-sH-fDF"/>
                         <outlet property="imageView" destination="Lat-vA-xaH" id="aK4-km-U4w"/>
+                        <outlet property="imageView3" destination="zfq-Uj-Pa2" id="GFu-ba-KyE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
