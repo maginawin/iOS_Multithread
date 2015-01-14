@@ -14,112 +14,188 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="800"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLa-Yk-95l">
-                                <rect key="frame" x="51" y="28" width="218" height="30"/>
-                                <state key="normal" title="测试 Serial ( 串行 )">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="serial:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="hxa-C3-k07"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cW1-16-6TO">
-                                <rect key="frame" x="51" y="66" width="218" height="30"/>
-                                <state key="normal" title="测试 Concurrent ( 并发 )">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="concurrent:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="EJB-2L-Pas"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUK-gX-hmV">
-                                <rect key="frame" x="51" y="104" width="218" height="30"/>
-                                <state key="normal" title="使用 GCD 下载图片">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="downloadImage:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="bkE-NU-eAA"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hba-kn-XDy">
-                                <rect key="frame" x="51" y="190" width="218" height="30"/>
-                                <state key="normal" title="同步提交任务">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="syncTask:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="2En-zX-fCK"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6mf-al-K0p">
-                                <rect key="frame" x="51" y="228" width="218" height="30"/>
-                                <state key="normal" title="多次提交的任务">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="applyTash:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="6mn-uu-WSN"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNb-o2-lkg">
-                                <rect key="frame" x="51" y="266" width="218" height="30"/>
-                                <state key="normal" title="只执行一次的任务">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onceTask:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="wda-qw-HV0"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fZr-vH-qWn">
-                                <rect key="frame" x="51" y="304" width="218" height="30"/>
-                                <state key="normal" title="NSBlockOperation">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="blockOperation:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="6Ne-Gm-yWP"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w0E-GU-3ee">
-                                <rect key="frame" x="51" y="342" width="218" height="30"/>
-                                <state key="normal" title="NSInvocationOperation">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="invocationOperation:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="3gJ-qi-TtK"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MEK-a7-bC1">
-                                <rect key="frame" x="99" y="142" width="40" height="40"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zfq-Uj-Pa2">
-                                <rect key="frame" x="147" y="142" width="40" height="40"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w4M-l8-7YR">
-                                <rect key="frame" x="51" y="380" width="218" height="30"/>
-                                <state key="normal" title="WwdNSOperation">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="wwdOperation:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ce1-PR-MUY"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lat-vA-xaH">
-                                <rect key="frame" x="51" y="142" width="40" height="40"/>
-                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5a9-be-zpt">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="800"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVj-2a-GDK">
+                                        <rect key="frame" x="51" y="30" width="218" height="30"/>
+                                        <state key="normal" title="测试 Serial ( 串行 )">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="serial:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="HPB-H4-hM0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="62o-PX-fja">
+                                        <rect key="frame" x="51" y="68" width="218" height="30"/>
+                                        <state key="normal" title="测试 Concurrent ( 并发 )">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="concurrent:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="oIW-uh-CvB"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="twK-0U-8QP">
+                                        <rect key="frame" x="51" y="106" width="218" height="30"/>
+                                        <state key="normal" title="使用 GCD 下载图片">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="downloadImage:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="xKD-qR-K8J"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xv7-jf-hNy">
+                                        <rect key="frame" x="51" y="192" width="218" height="30"/>
+                                        <state key="normal" title="同步提交任务">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="syncTask:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="W4h-ol-uXw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BIC-Zo-g5H">
+                                        <rect key="frame" x="51" y="230" width="218" height="30"/>
+                                        <state key="normal" title="多次提交的任务">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="applyTash:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="iVw-Ss-5jb"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8fA-Ol-a2Z">
+                                        <rect key="frame" x="51" y="268" width="218" height="30"/>
+                                        <state key="normal" title="只执行一次的任务">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onceTask:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Evc-3S-n1j"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="auB-re-mKQ">
+                                        <rect key="frame" x="51" y="306" width="218" height="30"/>
+                                        <state key="normal" title="NSBlockOperation">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="blockOperation:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="5Iv-BH-wUZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Yq-aO-Uya">
+                                        <rect key="frame" x="51" y="344" width="218" height="30"/>
+                                        <state key="normal" title="NSInvocationOperation">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="invocationOperation:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="f4e-js-MlR"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qwi-eu-jTJ">
+                                        <rect key="frame" x="99" y="144" width="40" height="40"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9tv-Zv-ean">
+                                        <rect key="frame" x="147" y="144" width="40" height="40"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DgG-2h-a9u">
+                                        <rect key="frame" x="51" y="382" width="218" height="30"/>
+                                        <state key="normal" title="WwdNSOperation">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="wwdOperation:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="hDr-gK-8jL"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VfM-uX-kdQ">
+                                        <rect key="frame" x="51" y="144" width="40" height="40"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNe-ti-dpu">
+                                        <rect key="frame" x="51" y="420" width="218" height="30"/>
+                                        <state key="normal" title="切换到其他界面测试循环引用">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="wwdOperation:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="pca-na-IEI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGP-cl-VuY">
+                                        <rect key="frame" x="51" y="458" width="218" height="30"/>
+                                        <state key="normal" title="延时启动 (dispatch_after)">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="delayTask:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ekP-ZO-nhw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="94A-8J-DSF">
+                                        <rect key="frame" x="51" y="496" width="218" height="30"/>
+                                        <state key="normal" title="dispatch_group">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="groupTask:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="hYp-6k-2E9"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rl9-Su-s55">
+                                        <rect key="frame" x="51" y="534" width="218" height="30"/>
+                                        <state key="normal" title="手工创建 UIWindow">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="createUIWindow:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="BaE-fD-KWv"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5a9-be-zpt" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="CxO-nQ-bkc"/>
+                            <constraint firstAttribute="trailing" secondItem="5a9-be-zpt" secondAttribute="trailing" id="Fil-cE-d1O"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="5a9-be-zpt" secondAttribute="bottom" id="KhH-Vz-KyI"/>
+                            <constraint firstItem="5a9-be-zpt" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="rVt-AR-auG"/>
+                        </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="800"/>
                     <connections>
-                        <outlet property="imageVIew2" destination="MEK-a7-bC1" id="IhU-sH-fDF"/>
-                        <outlet property="imageView" destination="Lat-vA-xaH" id="aK4-km-U4w"/>
-                        <outlet property="imageView3" destination="zfq-Uj-Pa2" id="GFu-ba-KyE"/>
+                        <outlet property="scrollView" destination="5a9-be-zpt" id="gem-6I-Az1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="186" y="108"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="z6V-67-ZGr">
+            <objects>
+                <viewController id="nDS-DV-NAY" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UO1-dj-U2a"/>
+                        <viewControllerLayoutGuide type="bottom" id="hfn-yK-0Le"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="W0w-BR-Gwa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GsT-y2-hXL">
+                                <rect key="frame" x="16" y="28" width="46" height="30"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="vXZ-lx-hvc" kind="presentation" id="B6e-5m-7p1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RKR-w7-sn9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="597" y="108"/>
         </scene>
     </scenes>
 </document>

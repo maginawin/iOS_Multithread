@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		081443551A6608F400818BA9 /* PasswordInputWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 081443541A6608F400818BA9 /* PasswordInputWindow.m */; };
 		081891F81A63B17200CB6574 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 081891F71A63B17200CB6574 /* main.m */; };
 		081891FB1A63B17200CB6574 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 081891FA1A63B17200CB6574 /* AppDelegate.m */; };
 		081891FE1A63B17200CB6574 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 081891FD1A63B17200CB6574 /* ViewController.m */; };
@@ -28,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		081443531A6608F400818BA9 /* PasswordInputWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordInputWindow.h; sourceTree = "<group>"; };
+		081443541A6608F400818BA9 /* PasswordInputWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordInputWindow.m; sourceTree = "<group>"; };
 		081891F21A63B17200CB6574 /* WwdMultiThread.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WwdMultiThread.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		081891F61A63B17200CB6574 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		081891F71A63B17200CB6574 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -94,6 +97,8 @@
 				081891F51A63B17200CB6574 /* Supporting Files */,
 				081A5E991A6500CF001449B4 /* WwdNSOperation.h */,
 				081A5E9A1A6500CF001449B4 /* WwdNSOperation.m */,
+				081443531A6608F400818BA9 /* PasswordInputWindow.h */,
+				081443541A6608F400818BA9 /* PasswordInputWindow.m */,
 			);
 			path = WwdMultiThread;
 			sourceTree = "<group>";
@@ -225,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				081891FE1A63B17200CB6574 /* ViewController.m in Sources */,
+				081443551A6608F400818BA9 /* PasswordInputWindow.m in Sources */,
 				081891FB1A63B17200CB6574 /* AppDelegate.m in Sources */,
 				081891F81A63B17200CB6574 /* main.m in Sources */,
 				081A5E9B1A6500CF001449B4 /* WwdNSOperation.m in Sources */,

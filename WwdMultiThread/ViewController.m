@@ -8,12 +8,14 @@
 
 #import "ViewController.h"
 #import "WwdNSOperation.h"
+#import "PasswordInputWindow.h"
 
 @interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIImageView* imageVIew2;
 @property (weak, nonatomic) IBOutlet UIImageView* imageView3;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end
 
@@ -23,8 +25,13 @@ dispatch_queue_t serialQueue; // 串行队列
 dispatch_queue_t concurrentQueue; // 并发队列
 NSOperationQueue* operationQueue; // 执行并发队列
 
+UIWindow* mUIWindow;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //初始化 scrollView
+    _scrollView.contentSize = CGSizeMake(self.view.frame.size.width, 600.0);
+    
     // 创建串行队列
     serialQueue = dispatch_queue_create("fkjava.queue", DISPATCH_QUEUE_SERIAL);
     // 创建并发队列
@@ -33,13 +40,21 @@ NSOperationQueue* operationQueue; // 执行并发队列
     // 使用默认的通知中心监听应用程序转入后台的过程
     // 应用转入后台时会向通知中心发送 UIApplicationDidEnterBackgroundNotification
     // 从而激发 enterBack: 方法
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(enterBack:) name:UIApplicationDidEnterBackgroundNotification object:[UIApplication sharedApplication]];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(enterBackForPasswordWindow:) name:UIApplicationDidEnterBackgroundNotification object:[UIApplication sharedApplication]];
     
     // 初始化 operationQueue
     operationQueue = [[NSOperationQueue alloc] init];
     // 设置最大并行的线程 10 个
     operationQueue.maxConcurrentOperationCount = 10;
+    
+    // 测试循环引用, 相互引用, 对象不会释放
+    NSMutableArray* first = [NSMutableArray array];
+    NSMutableArray* second = [NSMutableArray array];
+    [first addObjectsFromArray:first];
+    [second addObjectsFromArray:second];
 }
+
+#pragma mark - GCD & NSOperation
 
 // 测试 Serial (串行)
 - (IBAction)serial:(id)sender{
@@ -132,6 +147,37 @@ NSOperationQueue* operationQueue; // 执行并发队列
     });
 }
 
+// 延迟 10 秒执行
+- (IBAction)delayTask:(id)sender {
+    double delayInSeconds = 10;
+    NSDate* now = [NSDate date];
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^ {
+        NSInteger interval = -[now timeIntervalSinceNow];
+        NSLog(@"%ld 秒后才会运行", (long)interval);
+    });
+}
+
+// 让后台两个线程并行执行, 然后等两个线程都结束后, 再汇总执行结果, 用 dispatch_group, dispatch_group_async 和 dispatch_path_group_notify 来实现
+- (IBAction)groupTask:(id)sender {
+    // 默认情况下, block 访问变量是复制过去的, 修改变量的值是不能改变的
+    // 但是若在前面加了 __block 关键字, 则修改等操作可以生效
+    __block int a, b;
+    dispatch_group_t group = dispatch_group_create();
+    dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^ {
+        NSLog(@"并行执行的线程1");
+        a = 100;
+    });
+    dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^ {
+        NSLog(@"并行执行的线程2");
+        b = 200;
+    });
+    dispatch_group_notify(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^ {
+        // 汇总结果
+        NSLog(@"结果是: %d", a + b);
+    });
+}
+
 // 请求更多的后台时间
 // 以applicaitonDidEnterBackground: 为平台, 告诉系统进入后台还有更多的任务需要完成, 从而向系统申请更多的后台时间
 // 1. 调用 UIApplication 对象的 beginBackgroundTaskWithExpirationHandler: 方法请求获取更多的后台执行时间, 该方法默认请求 10 分钟后台时间. 该方法需要传入一个代码块作为参数, 如果请求获取后台执行时间失败, 将会执行该代码块. 该方法将会返回一个 UIBackgroundTaskIdentifier 类型的变量, 该变量可作为后台任务的标识符.
@@ -166,6 +212,18 @@ NSOperationQueue* operationQueue; // 执行并发队列
         // 结束后台任务
         [app endBackgroundTask:backTaskId];
     });
+}
+
+- (void)enterBackForPasswordWindow:(NSNotification*)notification {
+    UIApplication* app = [UIApplication sharedApplication];
+    __block UIBackgroundTaskIdentifier backTaskId;
+    backTaskId = [app beginBackgroundTaskWithExpirationHandler:^ {
+        [app endBackgroundTask:backTaskId];
+    }];
+    if (backTaskId == UIBackgroundTaskInvalid) {
+        // failed
+    }
+        
 }
 
 // 使用 NSBlockOperation 作为 NSOperation 添加到 operationQueue
@@ -213,4 +271,31 @@ NSOperationQueue* operationQueue; // 执行并发队列
     WwdNSOperation* operation = [[WwdNSOperation alloc] initWithUIImage:_imageView3 fromURL:[NSURL URLWithString:@"http://mymcuapp.com/images/mywatchapp.png"]];
     [operationQueue addOperation:operation];
 }
+
+// 手工创建 UIView
+// UIWindow 和创建 UIView 不同, 一旦被创建就自动被添加到整个界面上
+// UIWindow WindowLevel {
+// UIKIT_EXTERN const UIWindowLevel UIWindowLevelNormal (0.000000), UIWindowLevelAlert (1000.000000), UIWindowLevelStatusBar (2000.000000), 可以自定义
+// }
+- (IBAction)createUIWindow:(id)sender {
+    mUIWindow = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    mUIWindow.windowLevel = UIWindowLevelNormal;
+    mUIWindow.backgroundColor = [UIColor redColor];
+    mUIWindow.hidden = NO;
+    
+    // 添加点击手势
+    UIGestureRecognizer* gesture = [[UITapGestureRecognizer alloc] init];
+    [gesture addTarget:self action:@selector(hideMyUIWindow:)];
+    [mUIWindow addGestureRecognizer:gesture];
+}
+
+- (void)hideMyUIWindow:(UIGestureRecognizer*)gesture {
+    mUIWindow.hidden = YES;
+    mUIWindow = nil;
+}
+
+// PasswordInputWindow
+// 在 AppDelegate 的 applicationDidEnterBackground: application 中使用
+
+
 @end
