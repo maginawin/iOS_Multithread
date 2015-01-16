@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nDS-DV-NAY">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -146,6 +146,15 @@
                                             <action selector="createUIWindow:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="BaE-fD-KWv"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="moL-Ki-HZZ">
+                                        <rect key="frame" x="51" y="572" width="218" height="30"/>
+                                        <state key="normal" title="VerticalProgressBar">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="nDS-DV-NAY" kind="presentation" modalTransitionStyle="coverVertical" id="zjU-hQ-wRP"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </scrollView>
                         </subviews>
@@ -167,10 +176,10 @@
             </objects>
             <point key="canvasLocation" x="186" y="108"/>
         </scene>
-        <!--View Controller-->
+        <!--Second View Controller-->
         <scene sceneID="z6V-67-ZGr">
             <objects>
-                <viewController id="nDS-DV-NAY" sceneMemberID="viewController">
+                <viewController id="nDS-DV-NAY" customClass="SecondViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UO1-dj-U2a"/>
                         <viewControllerLayoutGuide type="bottom" id="hfn-yK-0Le"/>
@@ -188,10 +197,35 @@
                                     <segue destination="vXZ-lx-hvc" kind="presentation" id="B6e-5m-7p1"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7eq-Hd-PCu" customClass="VerticalProgressBar">
+                                <rect key="frame" x="26" y="132" width="27" height="140"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2U-gp-bxm">
+                                <rect key="frame" x="16" y="94" width="46" height="30"/>
+                                <state key="normal" title="Add">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addProgress:" destination="nDS-DV-NAY" eventType="touchUpInside" id="3rl-AT-RTm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fnh-fh-aOu">
+                                <rect key="frame" x="16" y="280" width="46" height="30"/>
+                                <state key="normal" title="Minus">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="minusProgress:" destination="nDS-DV-NAY" eventType="touchUpInside" id="IXq-V4-SuJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="verticalProgressBar" destination="7eq-Hd-PCu" id="pLs-rE-pgd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RKR-w7-sn9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

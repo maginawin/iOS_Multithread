@@ -21,6 +21,7 @@
         _imageView = imageView;
     }
     return self;
+    UIProgressView* a = nil;
 }
 
 // 重写 NSOperation 类主要重写 main 方法, NSOperationQueue 执行这个方法

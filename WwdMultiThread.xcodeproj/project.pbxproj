@@ -16,6 +16,8 @@
 		081892061A63B17200CB6574 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 081892041A63B17200CB6574 /* LaunchScreen.xib */; };
 		081892121A63B17200CB6574 /* WwdMultiThreadTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 081892111A63B17200CB6574 /* WwdMultiThreadTests.m */; };
 		081A5E9B1A6500CF001449B4 /* WwdNSOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 081A5E9A1A6500CF001449B4 /* WwdNSOperation.m */; };
+		082D32051A68A03F00B66EC5 /* VerticalProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 082D32041A68A03F00B66EC5 /* VerticalProgressBar.m */; };
+		082D32081A68F61D00B66EC5 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 082D32071A68F61D00B66EC5 /* SecondViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,10 @@
 		081892111A63B17200CB6574 /* WwdMultiThreadTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WwdMultiThreadTests.m; sourceTree = "<group>"; };
 		081A5E991A6500CF001449B4 /* WwdNSOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WwdNSOperation.h; sourceTree = "<group>"; };
 		081A5E9A1A6500CF001449B4 /* WwdNSOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WwdNSOperation.m; sourceTree = "<group>"; };
+		082D32031A68A03F00B66EC5 /* VerticalProgressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalProgressBar.h; sourceTree = "<group>"; };
+		082D32041A68A03F00B66EC5 /* VerticalProgressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalProgressBar.m; sourceTree = "<group>"; };
+		082D32061A68F61D00B66EC5 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		082D32071A68F61D00B66EC5 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,18 +93,21 @@
 		081891F41A63B17200CB6574 /* WwdMultiThread */ = {
 			isa = PBXGroup;
 			children = (
-				081891F91A63B17200CB6574 /* AppDelegate.h */,
-				081891FA1A63B17200CB6574 /* AppDelegate.m */,
-				081891FC1A63B17200CB6574 /* ViewController.h */,
-				081891FD1A63B17200CB6574 /* ViewController.m */,
-				081891FF1A63B17200CB6574 /* Main.storyboard */,
-				081892021A63B17200CB6574 /* Images.xcassets */,
-				081892041A63B17200CB6574 /* LaunchScreen.xib */,
-				081891F51A63B17200CB6574 /* Supporting Files */,
+				082D32021A689E8000B66EC5 /* VerticalProgressBar */,
 				081A5E991A6500CF001449B4 /* WwdNSOperation.h */,
 				081A5E9A1A6500CF001449B4 /* WwdNSOperation.m */,
 				081443531A6608F400818BA9 /* PasswordInputWindow.h */,
 				081443541A6608F400818BA9 /* PasswordInputWindow.m */,
+				081891F91A63B17200CB6574 /* AppDelegate.h */,
+				081891FA1A63B17200CB6574 /* AppDelegate.m */,
+				081891FC1A63B17200CB6574 /* ViewController.h */,
+				081891FD1A63B17200CB6574 /* ViewController.m */,
+				082D32061A68F61D00B66EC5 /* SecondViewController.h */,
+				082D32071A68F61D00B66EC5 /* SecondViewController.m */,
+				081891FF1A63B17200CB6574 /* Main.storyboard */,
+				081892021A63B17200CB6574 /* Images.xcassets */,
+				081892041A63B17200CB6574 /* LaunchScreen.xib */,
+				081891F51A63B17200CB6574 /* Supporting Files */,
 			);
 			path = WwdMultiThread;
 			sourceTree = "<group>";
@@ -127,6 +136,15 @@
 				081892101A63B17200CB6574 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		082D32021A689E8000B66EC5 /* VerticalProgressBar */ = {
+			isa = PBXGroup;
+			children = (
+				082D32031A68A03F00B66EC5 /* VerticalProgressBar.h */,
+				082D32041A68A03F00B66EC5 /* VerticalProgressBar.m */,
+			);
+			name = VerticalProgressBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,6 +196,7 @@
 				TargetAttributes = {
 					081891F11A63B17200CB6574 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = DPGK272U4N;
 					};
 					0818920A1A63B17200CB6574 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -232,7 +251,9 @@
 				081891FE1A63B17200CB6574 /* ViewController.m in Sources */,
 				081443551A6608F400818BA9 /* PasswordInputWindow.m in Sources */,
 				081891FB1A63B17200CB6574 /* AppDelegate.m in Sources */,
+				082D32081A68F61D00B66EC5 /* SecondViewController.m in Sources */,
 				081891F81A63B17200CB6574 /* main.m in Sources */,
+				082D32051A68A03F00B66EC5 /* VerticalProgressBar.m in Sources */,
 				081A5E9B1A6500CF001449B4 /* WwdNSOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,10 +377,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++98";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = WwdMultiThread/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -368,10 +392,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++98";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = WwdMultiThread/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
